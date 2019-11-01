@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Android Jetpack</string>
+    <string name="movie">Movie</string>
+    <string name="tvshow">TvShow</string>
+    <string name="favorite">Favorite</string>
+    <string name="description">description</string>
+    <string name="title">Title</string>
+
+</resources>

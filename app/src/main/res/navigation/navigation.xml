@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/movie_fragment">
+
+    <fragment
+        android:id="@+id/detail_fragment"
+        android:name="com.andresetiawana09.androidjetpack.ui.detailitem.DetailItem"
+        android:label="Detail"
+        tools:layout="@layout/detail_item_fragment">
+        <argument
+            android:name="MOVIE"
+            app:argType="com.andresetiawana09.androidjetpack.data.local.MovieDummy"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="TV_SHOW"
+            app:argType="com.andresetiawana09.androidjetpack.data.local.TvShowDummy"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/movie_fragment"
+        android:name="com.andresetiawana09.androidjetpack.ui.listmovie.MovieList"
+        android:label="Movie"
+        tools:layout="@layout/movie_list_fragment" >
+        <action
+            android:id="@+id/action_movie_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/detail_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tv_fragment"
+        android:name="com.andresetiawana09.androidjetpack.ui.listtvshow.TvShowList"
+        android:label="Tv Show"
+        tools:layout="@layout/tv_show_list_fragment" >
+        <action
+            android:id="@+id/action_tv_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/detail_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favorite_fragment"
+        android:name="com.andresetiawana09.androidjetpack.ui.favorite.FavoriteList"
+        android:label="Favorite"
+        tools:layout="@layout/favorite_list_fragment" >
+        <action
+            android:id="@+id/action_favorite_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment" />
+    </fragment>
+</navigation>
